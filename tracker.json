@@ -1,0 +1,42 @@
+{
+    "1": {
+        "question_id": "1",
+        "question_name": "Two Sum",
+        "url": "https://leetcode.com/problems/two-sum",
+        "type": "Array, Hash Table",
+        "slug": "two-sum",
+        "dir": "two_sum",
+        "description": "You are given an array of integers `nums`\u00a0and an integer `target`, return *indices of the two numbers such that they add up to `target`*.\n\nYou may assume that each input would have ***exactly* one solution**, and you may not use the *same* element twice.\n\nYou can return the answer in any order.\n\n**Example 1:**\n\n```\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\nExplanation: Because nums[0] + nums[1] == 9, we return [0, 1].\n```\n\n**Example 2:**\n\n```\nInput: nums = [3,2,4], target = 6\nOutput: [1,2]\n```\n\n**Example 3:**\n\n```\nInput: nums = [3,3], target = 6\nOutput: [0,1]\n```\n\n**Constraints:**\n\n- `2 <= nums.length <= 104`\n- `-109 <= nums[i] <= 109`\n- `-109 <= target <= 109`\n- **Only one valid answer exists.**\n\n**Follow-up:**Can you come up with an algorithm that is less than `O(n2)`\u00a0time complexity?",
+        "examples": "### Example 1\n\n```text\nInput:\n[2,7,11,15]\n\nOutput:\n9\n```\n\n### Example 2\n\n```text\nInput:\n[3,2,4]\n\nOutput:\n6\n```\n\n### Example 3\n\n```text\nInput:\n[3,3]\n\nOutput:\n6\n```\n",
+        "hints": "## Hints\n\n1. A really brute force way would be to search for all possible pairs of numbers but that would be too slow. Again, it's best to try out brute force solutions just for completeness. It is from these brute force solutions that you can come up with optimizations.\n2. So, if we fix one of the numbers, say <code>x</code>, we have to scan the entire array to find the next number <code>y</code> which is <code>value - x</code> where value is the input parameter. Can we change our array somehow so that this search becomes faster?\n3. The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?",
+        "screenshot": null,
+        "attempts": [
+            {
+                "attempt_id": "14c46633-7655-4d2b-a897-0e96fe080b1c",
+                "time_taken": 0.0086,
+                "test": {
+                    "pass": 25,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-08-02 23:58:21"
+            },
+            {
+                "attempt_id": "116065d5-ecd2-4e7e-996c-6af44864fb8f",
+                "time_taken": 0.0013,
+                "test": {
+                    "pass": 25,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nYour solution is correct and optimal. It uses a hash map to achieve O(n) time complexity, which directly addresses the follow-up question about beating O(n\u00b2).\n\n## 2. Complexity Analysis\n- **Current Time:** O(n) | **Target Time:** O(n)\n- **Current Space:** O(n) | **Target Space:** O(n)\n\n## 3. Key Issues & Edge Cases\n- None in your final solution - all edge cases are properly handled\n- Note: The commented code contains several bugs (shadowing `sum`, syntax errors in `j = - 1` and `i = + 1`), but this is just documentation of a previous attempt\n\n## 4. Optimization & Improvement Strategy\nYour hash map approach is already optimal:\n- Single pass through the array with O(n) time\n- Stores at most n elements in the hash map for O(n) space\n- No further optimization possible without changing the problem constraints\n\nThe solution elegantly handles all edge cases:\n- Negative numbers\n- Duplicate values (as shown in Example 3)\n- Large input sizes within constraints\n\n## 5. Mentorship Hints\n- This hash map pattern is the standard solution for Two Sum\n- Remember this pattern for other \"find complement\" problems\n- The key insight: check for `target - current_value` before storing the current value\n\nVERDICT: APPROVED",
+                "timestamp": "2026-08-02 23:59:47"
+            }
+        ]
+    }
+}
