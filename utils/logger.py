@@ -27,7 +27,7 @@ logging.basicConfig(
 )
 
 # keep noisy third-party HTTP clients (used by the agents) at WARNING+
-for _noisy in ("httpx", "httpcore", "urllib3", "asyncio"):
+for _noisy in ("httpx", "httpcore", "urllib3", "asyncio","langsmith"):
     logging.getLogger(_noisy).setLevel(logging.WARNING)
 
 
