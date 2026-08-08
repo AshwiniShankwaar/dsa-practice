@@ -10,6 +10,7 @@ from agents import generate_test_case, evaluate_solution, generate_readme_sectio
 from agents.config import Config
 from utils.load_files import _load_solution,_load_testCase
 from utils.readme import get_readme_section, upsert_readme_section
+from utils.git_publish import commit_and_push
 from utils.logger import get_logger
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -225,6 +226,8 @@ if __name__ == "__main__":
             upsert_readme_section(qid, section, path=Config.solution_approach_file)
             logger.info("Solution approach updated for question %s in %s",
                         qid, Config.solution_approach_file)
+            commit_and_push(BASE_DIR, question_dir, question_name,
+                            Config.solution_approach_file)
         except Exception:
             logger.warning("Solution approach update failed; attempt already recorded.", exc_info=True)
     else:
