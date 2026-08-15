@@ -20,22 +20,7 @@ class Solution:
         #     i+=1
         #     j-=1
         # return True
-        # if x < 0:
-        #     return False
-        # if x < 10:
-        #     return True
-        # reverse_x = 0
-        # while True:   #1204321
-        #     r = x%10 #4
-        #     x = x//10 #120
-        #     if x < ((reverse_x*10) + r): #f f f t
-        #         break
-        #     if x == ((reverse_x*10) + r): #f f f
-        #         reverse_x = (reverse_x * 10) + r
-        #         break
-        #     reverse_x = (reverse_x * 10) + r  # 123
-        # if reverse_x != x:
-        #     return False
+        # Best optimized approach convert the numer in str and reverse using [::-1] and compare.
         if x < 0:
             return False
         if x < 10:

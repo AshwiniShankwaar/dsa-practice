@@ -123,18 +123,19 @@ if __name__ == "__main__":
     # leetcode itself provides the official title and topic tags.
     slug = slug_from_url(data["url"])                # e.g. "two-sum"
     question_dir = slug.replace("-", "_")            # e.g. "two_sum" (importable dir name)
-    details = get_question_details(data["url"])
-    question_name = details.get("title") or slug.replace("-", " ").title()
-    if details["screenshot"]:
-        # the solution now lives in its own dir, so the screenshot can too
-        dest_path = os.path.join(BASE_DIR, f"solutions/{question_dir}/description.png")
-        os.makedirs(os.path.dirname(dest_path), exist_ok=True)
-        move_file(dest_path,details["screenshot"])
-        details["screenshot"] = dest_path  # tracker stores the final location
-
-    tracker = Tracker.load()
     question_key = str(data["question_id"])  # leetcode ids are unique; no name hash needed
+    tracker = Tracker.load()
     if question_key not in tracker:
+        details = get_question_details(data["url"])
+        question_name = details.get("title") or slug.replace("-", " ").title()
+        if details["screenshot"]:
+            # the solution now lives in its own dir, so the screenshot can too
+            dest_path = os.path.join(BASE_DIR, f"solutions/{question_dir}/description.png")
+            os.makedirs(os.path.dirname(dest_path), exist_ok=True)
+            move_file(dest_path,details["screenshot"])
+            details["screenshot"] = dest_path  # tracker stores the final location
+
+        # if question_key not in tracker:
         tracker[question_key] = {
             "question_id": data["question_id"],
             "question_name": question_name,
@@ -226,7 +227,7 @@ if __name__ == "__main__":
             upsert_readme_section(qid, section, path=Config.solution_approach_file)
             logger.info("Solution approach updated for question %s in %s",
                         qid, Config.solution_approach_file)
-            commit_and_push(BASE_DIR, question_dir, question_name,
+            commit_and_push(BASE_DIR, question_dir, tracker[question_key]["question_name"],
                             Config.solution_approach_file)
         except Exception:
             logger.warning("Solution approach update failed; attempt already recorded.", exc_info=True)
@@ -236,7 +237,7 @@ if __name__ == "__main__":
 
     logger.info("=" * 60)
     logger.info("Execution Summary")
-    logger.info("Question      : %s", question_name)
+    logger.info("Question      : %s", tracker[question_key]["question_name"])
     logger.info("Outcome       : %s", outcome)
     logger.info("Time Taken    : %.4f sec", time_taken)
     logger.info("Passed Tests  : %d", test_summary["Pass"])

@@ -126,6 +126,7 @@ Generate 15 to 25 test cases in total, spread across:
 3. **Extreme Edge Cases:** Specific structural traps (e.g., all identical elements, sorted/reverse-sorted inputs, negative values, duplicates).
 4. **Scale / Stress Cases:** Larger inputs engineered to fail sub-optimal time/space complexities (e.g., catching $O(N^2)$ when $O(N \\log N)$ is required).
 
+# IMPORTANT: Make sure the test key and the expected output is correct, before concluding recheck the values.
 # Output Structure
 Build **strictly raw JSON** matching the dictionary format below. Do not add markdown formatting, prose, or extra keys outside this structure.
 
