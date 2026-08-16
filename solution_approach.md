@@ -28,3 +28,18 @@ This approach avoids converting to a string and only reverses half the number, m
 ### Complexity
 Time: O(log10(n)), Space: O(1) - the algorithm processes each digit once by repeatedly dividing by 10, using only constant extra space.
 <!-- question:9:end -->
+
+<!-- question:13:start -->
+## 13. Roman to Integer
+[Link](https://leetcode.com/problems/roman-to-integer)
+
+### Approach
+The solution processes the Roman numeral string from right to left, which simplifies the subtraction logic. Starting from the last character, each value is looked up in a dictionary mapping Roman symbols to their integer values.
+
+The algorithm maintains a running total. For the last character, it always adds its value since there's no following character to compare against. For all other characters, it compares the current character's value with the next character's value to the right. If the current value is smaller than the next, it subtracts (handling cases like IV, IX, etc.). Otherwise, it adds the current value.
+
+This right-to-left approach naturally handles the subtraction rule because smaller values appearing before larger values in the original string will be processed when we encounter them from the right.
+
+### Complexity
+Time: O(n), Space: O(1)
+<!-- question:13:end -->
