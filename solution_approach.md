@@ -43,3 +43,14 @@ This right-to-left approach naturally handles the subtraction rule because small
 ### Complexity
 Time: O(n), Space: O(1)
 <!-- question:13:end -->
+
+<!-- question:14:start -->
+## 14. Longest Common Prefix
+[Link](https://leetcode.com/problems/longest-common-prefix)
+
+### Approach
+The algorithm starts by assuming the first string is the initial longest common prefix. It then iterates over the remaining strings, and for each string, it repeatedly removes the last character of the prefix until the string starts with the current prefix. This shrink‑and‑verify process continues until all strings have been checked, at which point the remaining prefix is the longest common prefix among all strings.
+
+### Complexity
+Time: O(n * m), where n is the number of strings and m is the length of the first string; each character is removed at most once per string. Space: O(1) additional space, as the prefix is modified in place.
+<!-- question:14:end -->
