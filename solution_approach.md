@@ -54,3 +54,14 @@ The algorithm starts by assuming the first string is the initial longest common 
 ### Complexity
 Time: O(n * m), where n is the number of strings and m is the length of the first string; each character is removed at most once per string. Space: O(1) additional space, as the prefix is modified in place.
 <!-- question:14:end -->
+
+<!-- question:20:start -->
+## 20. Valid Parentheses
+[Link](https://leetcode.com/problems/valid-parentheses)
+
+### Approach
+The solution uses a hash map to map each closing bracket to its corresponding opening bracket. A stack tracks opening brackets as we iterate through the string. When a closing bracket is encountered, the stack is popped; if the popped opening bracket does not match the expected type (via the map), the string is invalid. If the stack is empty when a closing bracket appears, the string is also invalid. After processing all characters, the string is valid only if the stack is empty (all brackets were matched).
+
+### Complexity
+Time: O(n), Space: O(n) — each character is processed once, and the stack grows at most to the length of the string.
+<!-- question:20:end -->
