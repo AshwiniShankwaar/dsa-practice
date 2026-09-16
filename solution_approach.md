@@ -65,3 +65,14 @@ The solution uses a hash map to map each closing bracket to its corresponding op
 ### Complexity
 Time: O(n), Space: O(n) — each character is processed once, and the stack grows at most to the length of the string.
 <!-- question:20:end -->
+
+<!-- question:21:start -->
+## 21. Merge Two Sorted Lists
+[Link](https://leetcode.com/problems/merge-two-sorted-lists)
+
+### Approach
+The solution uses an iterative approach with a dummy head node to simplify edge cases. It maintains a `temp` pointer that always trails the last node in the merged list. During each iteration of the main `while` loop, it compares the current values of `list1` and `list2`, attaches the smaller node to `temp.next`, and advances both the chosen list's pointer and `temp`. Once one list is exhausted, the remaining nodes of the other list are appended directly in a single pass, since they are already sorted. This avoids unnecessary comparisons and ensures all nodes are visited exactly once.
+
+### Complexity
+Time: O(n + m), Space: O(1) — the merge runs in linear time relative to the total number of nodes, and only constant extra space is used beyond the output list (nodes are spliced in-place).
+<!-- question:21:end -->
