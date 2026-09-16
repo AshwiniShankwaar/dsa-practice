@@ -183,5 +183,627 @@
                 "timestamp": "2026-08-16 00:24:49"
             }
         ]
+    },
+    "13": {
+        "question_id": "13",
+        "question_name": "Roman to Integer",
+        "url": "https://leetcode.com/problems/roman-to-integer",
+        "type": "Hash Table, Math, String",
+        "slug": "roman-to-integer",
+        "dir": "roman_to_integer",
+        "description": "Roman numerals are represented by seven different symbols:\u00a0`I`, `V`, `X`, `L`, `C`, `D` and `M`.\n\n```\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\n```\n\nFor example,\u00a0`2` is written as `II`\u00a0in Roman numeral, just two ones added together. `12` is written as\u00a0`XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.\n\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:\n\n- `I` can be placed before `V` (5) and `X` (10) to make 4 and 9.\n- `X` can be placed before `L` (50) and `C` (100) to make 40 and 90.\n- `C` can be placed before `D` (500) and `M` (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n\n**Example 1:**\n\n```\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n```\n\n**Example 2:**\n\n```\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n```\n\n**Example 3:**\n\n```\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n```\n\n**Constraints:**\n\n- `1 <= s.length <= 15`\n- `s` contains only\u00a0the characters `('I', 'V', 'X', 'L', 'C', 'D', 'M')`.\n- It is **guaranteed**\u00a0that `s` is a valid roman numeral in the range `[1, 3999]`.",
+        "examples": "### Example 1\n\n```text\n\"III\"\n```\n\n### Example 2\n\n```text\n\"LVIII\"\n```\n\n### Example 3\n\n```text\n\"MCMXCIV\"\n```\n",
+        "hints": "## Hints\n\n1. Problem is simpler to solve by working the string from back to front and using a map.",
+        "screenshot": null,
+        "attempts": [
+            {
+                "attempt_id": "017d7e06-54ab-4bd2-b681-78f0d9c0e9ae",
+                "time_taken": 0.0043,
+                "test": {
+                    "pass": 0,
+                    "fail": 32,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20",
+                    "t21",
+                    "t22",
+                    "t23",
+                    "t24",
+                    "t25",
+                    "t26",
+                    "t27",
+                    "t28",
+                    "t29",
+                    "t30",
+                    "t31",
+                    "t32"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-16 00:51:28"
+            },
+            {
+                "attempt_id": "79175fa2-c3e4-46c2-b32b-d42cb35be1b4",
+                "time_taken": 0.0079,
+                "test": {
+                    "pass": 0,
+                    "fail": 32,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20",
+                    "t21",
+                    "t22",
+                    "t23",
+                    "t24",
+                    "t25",
+                    "t26",
+                    "t27",
+                    "t28",
+                    "t29",
+                    "t30",
+                    "t31",
+                    "t32"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-17 00:41:13"
+            },
+            {
+                "attempt_id": "5a2c469e-c969-4e7b-9abc-1c8226d31b9f",
+                "time_taken": 0.011,
+                "test": {
+                    "pass": 0,
+                    "fail": 32,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20",
+                    "t21",
+                    "t22",
+                    "t23",
+                    "t24",
+                    "t25",
+                    "t26",
+                    "t27",
+                    "t28",
+                    "t29",
+                    "t30",
+                    "t31",
+                    "t32"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-17 00:42:15"
+            },
+            {
+                "attempt_id": "ddbc48b0-53b6-432f-a287-f91196e2f49b",
+                "time_taken": 0.0071,
+                "test": {
+                    "pass": 0,
+                    "fail": 32,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20",
+                    "t21",
+                    "t22",
+                    "t23",
+                    "t24",
+                    "t25",
+                    "t26",
+                    "t27",
+                    "t28",
+                    "t29",
+                    "t30",
+                    "t31",
+                    "t32"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-17 00:49:01"
+            },
+            {
+                "attempt_id": "8e9bc860-c764-4087-893e-360dc133291f",
+                "time_taken": 0.0027,
+                "test": {
+                    "pass": 31,
+                    "fail": 1,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t27"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-17 01:05:20"
+            },
+            {
+                "attempt_id": "dbb107a0-3b7d-45ad-a412-d19e84e70281",
+                "time_taken": 0.0021,
+                "test": {
+                    "pass": 31,
+                    "fail": 1,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t27"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-08-17 01:07:37"
+            },
+            {
+                "attempt_id": "c985a4be-7555-44fd-bbc3-9cb593f0c491",
+                "time_taken": 0.0039,
+                "test": {
+                    "pass": 32,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-08-17 01:07:55"
+            },
+            {
+                "attempt_id": "4cf269e8-b841-412e-80c7-43fcbbfbcf5c",
+                "time_taken": 0.0025,
+                "test": {
+                    "pass": 32,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nYour solution correctly converts Roman numerals to integers by processing the string from right to left. The algorithm properly handles subtraction cases (IV, IX, XL, XC, CD, CM) and produces accurate results for all provided examples.\n\n## 2. Complexity Analysis\n- **Current Time:** O(n) - where n is the length of the string\n- **Target Time:** O(n) - Already optimal\n- **Current Space:** O(n) - due to converting string to list\n- **Target Space:** O(1) - Can be improved to constant space\n\n## 3. Key Issues & Edge Cases\n- The code unnecessarily converts the string to a list: `c = list(s)` - strings are iterable, so this is redundant\n- The conditional logic can be simplified by removing the special case for the last character\n- Variable names could be more descriptive (`x`, `y`, `c` are not self-documenting)\n- The dictionary creation happens in the method rather than as a class-level constant\n\n## 4. Optimization & Improvement Strategy\nThe core algorithm is sound and efficient. Here's how to refine it:\n\n1. **Remove list conversion:** Iterate directly over the string using `enumerate(reversed(s))` or `for i in range(len(s)-1, -1, -1)`\n\n2. **Simplify subtraction logic:** When processing right to left, if current value < next value, subtract; otherwise add. This can be expressed more cleanly.\n\n3. **Use class-level constant:** Move the Roman numeral map to a class attribute for better memory usage and code organization.\n\n4. **Improve variable naming:** Use descriptive names like `current_val`, `next_val`, `roman_char`\n\nThe key insight is that processing right-to-left naturally handles subtraction cases: when a smaller value appears before a larger one (in left-to-right reading), we subtract instead of add.\n\n## 5. Mentorship Hints\n- Remember: In right-to-left processing, you only need to compare current and next characters\n- Try removing the list conversion - strings support direct indexing\n- Consider making the Roman numeral map a class constant for better performance\n- Look for ways to reduce nested conditional logic\n\nVERDICT: APPROVED",
+                "timestamp": "2026-08-17 01:10:39"
+            }
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question_name": "Longest Common Prefix",
+        "url": "https://leetcode.com/problems/longest-common-prefix",
+        "type": "Array, String, Trie",
+        "slug": "longest-common-prefix",
+        "dir": "longest_common_prefix",
+        "description": "Write a function to find the longest common prefix string amongst an array of strings.\n\nIf there is no common prefix, return an empty string `\"\"`.\n\n**Example 1:**\n\n```\nInput: strs = [\"flower\",\"flow\",\"flight\"]\nOutput: \"fl\"\n```\n\n**Example 2:**\n\n```\nInput: strs = [\"dog\",\"racecar\",\"car\"]\nOutput: \"\"\nExplanation: There is no common prefix among the input strings.\n```\n\n**Constraints:**\n\n- `1 <= strs.length <= 200`\n- `0 <= strs[i].length <= 200`\n- `strs[i]` consists of only lowercase English letters if it is non-empty.",
+        "examples": "### Example 1\n\n```text\n[\"flower\",\"flow\",\"flight\"]\n```\n\n### Example 2\n\n```text\n[\"dog\",\"racecar\",\"car\"]\n```\n",
+        "hints": "",
+        "screenshot": null,
+        "attempts": [
+            {
+                "attempt_id": "4e5f63a8-3cb5-469b-900a-687fc65f52e6",
+                "time_taken": 0.0013,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-09-01 01:22:35"
+            },
+            {
+                "attempt_id": "0c4f8ded-2c0e-4a2a-bce6-60adab4d7538",
+                "time_taken": 0.0012,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\n\nThe solution uses a \"horizontal scanning\" approach: start with the first string as the candidate prefix, then iteratively shorten it until it matches all remaining strings. The logic is on the right track, but there is a **critical bug** in the prefix-checking condition.\n\n## 2. Complexity Analysis\n\n- **Current Time:** O(n \u00b7 m) where n = number of strings, m = length of first string. Each while-loop iteration removes one character, and `find` is called per string.\n- **Target Time:** O(n \u00b7 m) is asymptotically optimal for this problem class (you must inspect each character in the worst case).\n- **Current Space:** O(1) extra space \u2014 only the prefix variable is stored.\n- **Target Space:** O(1)\n\n## 3. Key Issues & Edge Cases\n\n- **BUG: `find` checks substring anywhere, not just at the start.**  \n  The condition `strs[i].find(longest_prefix) < 0` is True when the prefix is *not found anywhere* in the string. But `find` returns the **first index** where the substring appears, even if that index > 0. If `longest_prefix` appears in the middle or end of `strs[i]` (but not at position 0), the condition evaluates to False and the loop incorrectly stops, returning an invalid prefix.\n\n  **Example that fails:** `strs = [\"ab\", \"cab\"]`  \n  - `longest_prefix = \"ab\"`, then `strs[1].find(\"ab\")` returns `1` (found at index 1).  \n  - `1 < 0` is False \u2192 while loop doesn't run \u2192 returns `\"ab\"`.  \n  - **Correct answer is `\"\"`** since `\"ab\"` is not a prefix of `\"cab\"`.\n\n- **Fix:** Use `not strs[i].startswith(longest_prefix)` or `strs[i].find(longest_prefix) != 0`.\n\n- **Edge case:** Problem constraints guarantee `1 <= strs.length`, so `strs[0]` access is safe. Empty strings within `strs` are handled naturally (prefix shortens to `\"\"`).\n\n## 4. Optimization & Improvement Strategy\n\nThe current approach is already asymptotically optimal at O(n \u00b7 m). The primary improvement is **correctness**: replace the `find` check with a `startswith` check. \n\nA vertical-scanning alternative (compare character by character across all strings at each position) has the same O(n \u00b7 m) worst-case bound but can short-circuit earlier when a mismatch is found at position 0. Either approach is fine once the `startswith` fix is applied.\n\n## 5. Mentorship Hints\n\n- Look at the condition `strs[i].find(longest_prefix) < 0`. Ask: *does `find` check the start of the string, or any position?*  \n- Python strings have a `startswith()` method designed exactly for this pattern. Consider using it.  \n- Trace one example manually step-by-step (e.g., `[\"ab\", \"cab\"]`) to see where the current code goes wrong.\n\n---\n\n**VERDICT: NEEDS_IMPROVEMENT** \u2014 the solution has a logical bug where `find` incorrectly matches substrings that appear after position 0.",
+                "timestamp": "2026-09-01 01:26:14"
+            },
+            {
+                "attempt_id": "799d802d-3ecc-47a6-b029-5ccf3369844a",
+                "time_taken": 0.001,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-09-01 01:42:43"
+            },
+            {
+                "attempt_id": "4a4f1a82-189e-4939-bc20-b64fe6bd1286",
+                "time_taken": 0.0011,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\n\nThe solution attempts to trim the prefix iteratively by comparing each string against the current `longest_prefix`. However, **the core while-condition logic is buggy** and produces incorrect results for standard test cases. The algorithm will not trim the prefix when it needs to, causing it to return overly-long prefixes.\n\n## 2. Complexity Analysis\n\n| | |\n|---|---|\n| **Current Time:** | $O(n \\cdot m)$ where $n = \\text{len(strs)}$, $m = \\text{max string length}$ \u2014 but the complexity is *wasted* on incorrect logic. |\n| **Target Time:** | $O(n \\cdot m)$ with correct trimming logic (e.g., character-by-character comparison or `startswith`). |\n| **Current Space:** | $O(1)$ \u2014 only `longest_prefix` is stored. |\n| **Target Space:** | $O(1)$ \u2014 same, no improvement needed. |\n\n## 3. Key Issues & Edge Cases\n\n- **Bug: `while strs[i].find(longest_prefix)` condition is inverted/faulty**  \n  Quoting the exact line: `while strs[i].find(longest_prefix):`  \n  `str.find(sub)` returns:\n  - `-1` if `sub` is not found\n  - `0` if `sub` is found at the **start** of the string\n  - `>0` if `sub` is found somewhere in the middle (not at start)\n  \n  Since `-1` and `0` are both **falsy** in Python, the while loop **never executes** when the prefix is either (a) not found at all, or (b) found at the start. The loop only runs when `find` returns a positive index \u2014 an unusual case that doesn't help the algorithm.\n  \n  **Tracing `strs = [\"flower\",\"flow\",\"flight\"]`:**\n  - `longest_prefix = \"flower\"`\n  - `i=1`: `\"flow\".find(\"flower\")` \u2192 `-1` \u2192 `while -1` \u2192 loop **skipped** \u2192 prefix stays `\"flower\"`\n  - `i=2`: `\"flight\".find(\"flower\")` \u2192 `-1` \u2192 loop **skipped** \u2192 prefix stays `\"flower\"`\n  - **Returns `\"flower\"`** instead of the correct `\"fl\"`.\n\n- **When the prefix truly ends (e.g., `strs = [\"dog\",\"racecar\",\"car\"]`):**  \n  The same bug means the prefix is never trimmed, and `\"dog\"` is returned instead of `\"\"`.\n\n- **Edge case: single string** `strs = [\"alone\"]` \u2192 returns `\"alone\"` (correct by coincidence, since no iteration occurs).\n\n- **Edge case: empty first string** `strs = [\"\", \"flow\"]` \u2192 returns `\"\"` (correct, but for the wrong reason \u2014 the while condition just happens to be falsy).\n\n## 4. Optimization & Improvement Strategy\n\n**Fix the while-condition logic.** The intent is: *keep trimming `longest_prefix` until the current string starts with it.* The correct check is:\n\n```python\nwhile not strs[i].startswith(longest_prefix):\n```\n\nor equivalently:\n\n```python\nwhile strs[i].find(longest_prefix) != 0:\n```\n\nWith this fix:\n- If `find` returns `-1` (not found): loop executes, trims one character, re-checks. Eventually prefix shortens to match or becomes `\"\"`.\n- If `find` returns `0` (at start): loop stops \u2014 the prefix is valid for this string.\n- If `find` returns `>0` (found in middle): loop executes, trims. This handles cases where the substring appears but not at the front.\n\n**No fundamental algorithm change is needed** \u2014 the \"trim-first-string-until-it-matches\" approach is fine once the condition is corrected. The time complexity remains $O(n \\cdot m)$ and space stays $O(1)$.\n\n## 5. Mentorship Hints\n\n- Look closely at what `str.find()` returns and how Python treats `-1` and `0` in boolean contexts. That\u2019s where the bug hides.\n- To check \"is this string starting with that prefix?\", Python offers the idiomatic `str.startswith(other)` \u2014 it reads clearly and avoids the `find` index-quirk entirely.\n- Run through the example `[\"flower\",\"flow\",\"flight\"]` manually with the corrected condition: start with `\"flower\"`, compare with `\"flow\"` \u2192 trim to `\"flowe\"` \u2192 trim to `\"flow\"` \u2192 `\"flow\".startswith(\"flow\")` is True, move on. Then compare `\"flow\"` with `\"flight\"` \u2192 trim to `\"flo\"` \u2192 trim to `\"fl\"` \u2192 `\"flight\".startswith(\"fl\")` is True. Final answer `\"fl\"`.\n\n**VERDICT: NEEDS_IMPROVEMENT**",
+                "timestamp": "2026-09-01 01:49:21"
+            },
+            {
+                "attempt_id": "41b0d49d-af03-4772-8370-862244311197",
+                "time_taken": 0.0009,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nThe solution uses a **horizontal scanning** approach: start with the first string as the candidate prefix, then iteratively reduce it while subsequent strings don't start with it. The logic is correct and produces the right output for both provided examples.\n\n## 2. Complexity Analysis\n- **Current Time:** O(S) where S is the total number of characters across all strings. Each character from the first string is examined/removed at most once.\n- **Target Time:** O(S) \u2014 this is already optimal for this problem pattern.\n- **Current Space:** O(1) \u2014 only a few variables are used, no extra data structures.\n- **Target Space:** O(1) \u2014 matches.\n\n## 3. Key Issues & Edge Cases\n- **Empty first-prefix scenario:** If `strs[0]` is empty (`\"\"`), the algorithm correctly returns `\"\"` since `\"any_string\".startswith(\"\")` is `True` in Python.\n- **No common prefix:** When the prefix is reduced to `\"\"`, the `while` loop terminates because `\"any_string\".startswith(\"\")` evaluates to `True`. The function correctly returns `\"\"`.\n- **Single-element array:** `for i in range(1, len(strs))` becomes `range(1, 1)` (empty), so `strs[0]` is returned directly \u2014 correct.\n- **All strings identical:** No reductions occur; the full first string is returned \u2014 correct.\n\n**Verified trace** for `[\"flower\",\"flow\",\"flight\"]`:\n- prefix = \"flower\" \u2192 reduce to \"flow\" (i=1) \u2192 reduce to \"fl\" (i=2) \u2192 return \"fl\" \u2713\n\n**Verified trace** for `[\"dog\",\"racecar\",\"car\"]`:\n- prefix = \"dog\" \u2192 reduce to \"do\" \u2192 \"d\" \u2192 \"\" (i=1) \u2192 remains \"\" (i=2) \u2192 return \"\" \u2713\n\n## 4. Optimization & Improvement Strategy\nThe current approach is already optimal in both time and space. The horizontal-scanning pattern is one of the standard optimal solutions for this problem. No algorithmic improvement is needed.\n\n**Potential micro-optimizations (style, not correctness):**\n- The `while` loop effectively does a linear scan of the prefix length. A `for` loop iterating from `len(longest_prefix)` down to `1` and using slicing (`longest_prefix[:i]`) could avoid repeated `startswith` re-evaluations, but the asymptotic complexity remains O(S).\n- The current code is clean and idiomatic enough; no refactoring is required for correctness or performance.\n\n## 5. Mentorship Hints\n- The solution correctly handles all edge cases within the constraints. You've successfully applied the horizontal-scanning pattern.\n- If you want to explore alternatives, **vertical scanning** (compare characters at position 0 across all strings, then position 1, etc.) is another O(S) approach that can early-expose mismatches without substring creation.\n- Remember that `\"\".startswith(\"\")` returns `True` in Python \u2014 this is the mechanism that cleanly terminates the reduction loop when the prefix is exhausted.\n\n**VERDICT: APPROVED**",
+                "timestamp": "2026-09-01 01:52:03"
+            }
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question_name": "Valid Parentheses",
+        "url": "https://leetcode.com/problems/valid-parentheses",
+        "type": "String, Stack, Bracket Sequences",
+        "slug": "valid-parentheses",
+        "dir": "valid_parentheses",
+        "description": "Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.\n\nAn input string is valid if:\n\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.\n\n**Example 1:**\n\n**Input:** s = \"()\"\n\n**Output:** true\n\n**Example 2:**\n\n**Input:** s = \"()[]{}\"\n\n**Output:** true\n\n**Example 3:**\n\n**Input:** s = \"(]\"\n\n**Output:** false\n\n**Example 4:**\n\n**Input:** s = \"([])\"\n\n**Output:** true\n\n**Example 5:**\n\n**Input:** s = \"([)]\"\n\n**Output:** false\n\n**Constraints:**\n\n- `1 <= s.length <= 104`\n- `s` consists of parentheses only `'()[]{}'`.",
+        "examples": "### Example 1\n\n```text\n\"()\"\n```\n\n### Example 2\n\n```text\n\"()[]{}\"\n```\n\n### Example 3\n\n```text\n\"(]\"\n```\n\n### Example 4\n\n```text\n\"([])\"\n```\n\n### Example 5\n\n```text\n\"([)]\"\n```\n",
+        "hints": "## Hints\n\n1. Use a stack of characters.\n2. When you encounter an opening bracket, push it to the top of the stack.\n3. When you encounter a closing bracket, check if the top of the stack was the opening for it. If yes, pop it from the stack. Otherwise, return false.",
+        "screenshot": null,
+        "attempts": [
+            {
+                "attempt_id": "cf419d81-ba27-45c2-b52b-a670dfd6c718",
+                "time_taken": 0.0042,
+                "test": {
+                    "pass": 19,
+                    "fail": 1,
+                    "error": 1
+                },
+                "failed_cases": [
+                    "t14"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-09-11 00:50:43"
+            },
+            {
+                "attempt_id": "d6fe3585-da33-44f8-b3d7-d6d52d08e416",
+                "time_taken": 0.0028,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-09-11 00:52:19"
+            },
+            {
+                "attempt_id": "b3d05a15-9f49-4653-ab2b-43487a448b4e",
+                "time_taken": 0.0016,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\n\nThe solution is **incorrect**. While it passes a few simple cases by coincidence, the core algorithm is flawed. The most telling failure is with `s = \"([])\"` \u2014 the expected output is `true`, but the solution returns `false`. The approach of initializing `stack = s[0]` and then using string concatenation/slicing to simulate a stack doesn't properly track bracket nesting order.\n\n## 2. Complexity Analysis\n\n| | |\n|---|---|\n| **Current Time:** | $O(n^2)$ worst-case (string concatenation `f\"{stack}{c}\"` and slicing `stack[:-1]` are $O(k)$ per operation where $k$ is stack size) |\n| **Target Time:** | $O(n)$ \u2014 single pass with proper stack operations |\n| **Current Space:** | $O(n)$ for the string-based stack |\n| **Target Space:** | $O(n) $ \u2014 explicit stack that only stores opening brackets |\n\n## 3. Key Issues & Edge Cases\n\n- **`stack = s[0]` initializes the stack as a single character string**, not an empty structure. This biases the algorithm toward the first character and breaks nested cases.\n- **Fails on `s = \"([])\"`**: Traces through and produces `stack = \"([])\"` at the end, returning `false` instead of `true`.\n- **String-based stack operations are $O(k)$ per step**: `stack = f\"{stack}{c}\"` and `stack = stack[:-1]` create new string objects each time, making the effective time complexity $O(n^2)$.\n- **The `else` branch appends mismatched/closing brackets to the string stack**, which conflates opening and closing brackets in the same storage \u2014 this is fundamentally wrong for tracking bracket order.\n- **Quote from code** (line `stack = s[0]`): This initializes the stack incorrectly. The remainder of the logic then builds on this broken foundation.\n\n## 4. Optimization & Improvement Strategy\n\n**Redesign using a proper stack and a mapping dictionary:**\n\n1. Initialize an empty list `stack = []` \u2014 this is the proper Python stack.\n2. Create a hashmap `mapping = {\")\": \"(\", \"}\": \"{\", \"]\": \"[\"}` that maps each closing bracket to its matching opening bracket.\n3. Iterate through each character `c` in `s`:\n   - If `c` is a **closing bracket** (i.e., `c in mapping`):\n     - Pop the top of the stack (or use a sentinel like `\"#\"` if the stack is empty).\n     - If the popped character does not match `mapping[c]`, return `False`.\n   - If `c` is an **opening bracket**, push it onto the stack (`stack.append(c)`).\n4. After the loop, return `True` if `stack` is empty, `False` otherwise.\n\n**Why this works:** The stack explicitly stores only opening brackets in the order they appear. When a closing bracket is encountered, we check that the most recent unmatched opening bracket is of the same type \u2014 exactly the \"correct order\" requirement. No string concatenation or slicing is needed; list `append` and `pop` are $O(1)$.\n\n## 5. Mentorship Hints\n\n- Can you trace your current code by hand on the example `s = \"([])\"`? Start by writing down what `stack` is after each iteration. You'll likely see where the order gets confused.\n- What data structure gives you $O(1)$ access to the \"most recent\" element? How does Python's `list` support that?\n- Look up the standard \"bracket matching\" pattern \u2014 it uses a stack *and* a dictionary mapping closers to openers. That's the idiom you want to reach for.\n\n**VERDICT: NEEDS_IMPROVEMENT**",
+                "timestamp": "2026-09-11 00:56:06"
+            },
+            {
+                "attempt_id": "3a866cc8-ba5f-4eb2-b108-9146473fb875",
+                "time_taken": 0.0086,
+                "test": {
+                    "pass": 16,
+                    "fail": 4,
+                    "error": 4
+                },
+                "failed_cases": [
+                    "t8",
+                    "t10",
+                    "t14",
+                    "t15"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-09-11 01:01:16"
+            },
+            {
+                "attempt_id": "487b7c07-e724-4ce8-926c-a5feaa57179d",
+                "time_taken": 0.0031,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nThe solution uses the standard stack-based approach for valid parentheses. Tracing through all five provided examples yields the correct outputs. The logic is sound and handles the core requirements properly.\n\n## 2. Complexity Analysis\n- **Current Time:** O(n) \u2014 one pass through the string, each character processed once  \n- **Target Time:** O(n) \u2014 this is optimal; cannot avoid examining each character  \n- **Current Space:** O(n) \u2014 stack can grow up to n characters in worst case (e.g., `(((...)`)  \n- **Target Space:** O(n) \u2014 this is optimal for a stack-based approach; the stack must hold unmatched opening brackets\n\n## 3. Key Issues & Edge Cases\n- **Variable name `map` shadows built-in:** The line `map = { ...}` overrides Python's built-in `map()` function. While not a correctness bug, it's a style concern and can cause confusion if `map` is needed later in the scope.  \n- **Variable `x` is terse:** The name `x` doesn't convey intent; `top` or `opening` would be more readable.  \n- **No other bugs detected:** The algorithm correctly handles nested brackets, mismatched types, and early-close-before-open scenarios.\n\n## 4. Optimization & Improvement Strategy\nThe solution is already time- and space-optimal for this problem. No asymptotic improvements are needed. The only meaningful refinements are stylistic:\n- Rename `map` to something like `bracket_map` or `closing_to_opening` to avoid shadowing the built-in.\n- Rename `x` to `top` for clarity.\n- These changes improve readability without altering logic.\n\n## 5. Mentorship Hints\n- The stack invariant is: \"at any point, the stack contains only unmatched opening brackets in the order they appeared.\"  \n- When you pop and the popped character doesn't match the expected opening for the current closing bracket, you can return `False` immediately \u2014 no need to continue scanning.  \n- The final `len(stack) == 0` check ensures every opening bracket was eventually closed.\n\nThe solution is correct and handles all edge cases appropriately. The only improvements are cosmetic (variable naming).\n\nVERDICT: APPROVED",
+                "timestamp": "2026-09-11 01:05:04"
+            }
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question_name": "Merge Two Sorted Lists",
+        "url": "https://leetcode.com/problems/merge-two-sorted-lists",
+        "type": "Linked List, Recursion",
+        "slug": "merge-two-sorted-lists",
+        "dir": "merge_two_sorted_lists",
+        "description": "You are given the heads of two sorted linked lists `list1` and `list2`.\n\nMerge the two lists into one **sorted** list. The list should be made by splicing together the nodes of the first two lists.\n\nReturn *the head of the merged linked list*.\n\n**Example 1:**\n\n![](https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg)\n\n```\nInput: list1 = [1,2,4], list2 = [1,3,4]\nOutput: [1,1,2,3,4,4]\n```\n\n**Example 2:**\n\n```\nInput: list1 = [], list2 = []\nOutput: []\n```\n\n**Example 3:**\n\n```\nInput: list1 = [], list2 = [0]\nOutput: [0]\n```\n\n**Constraints:**\n\n- The number of nodes in both lists is in the range `[0, 50]`.\n- `-100 <= Node.val <= 100`\n- Both `list1` and `list2` are sorted in **non-decreasing** order.",
+        "examples": "### Example 1\n\n```text\nInput:\n[1,2,4]\n\nOutput:\n[1,3,4]\n```\n\n### Example 2\n\n```text\nInput:\n[]\n\nOutput:\n[]\n```\n\n### Example 3\n\n```text\nInput:\n[]\n\nOutput:\n[0]\n```\n",
+        "hints": "",
+        "screenshot": null,
+        "attempts": [
+            {
+                "attempt_id": "9b7011bd-1d05-498b-b26c-4c64822b7d54",
+                "time_taken": 0.0037,
+                "test": {
+                    "pass": 0,
+                    "fail": 20,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-09-15 17:21:28"
+            },
+            {
+                "attempt_id": "cc919645-205f-4367-a020-0b82fdf62436",
+                "time_taken": 0.0205,
+                "test": {
+                    "pass": 0,
+                    "fail": 20,
+                    "error": 19
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t3",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20"
+                ],
+                "outcome": "Fail",
+                "evaluation": null,
+                "timestamp": "2026-09-16 11:01:42"
+            },
+            {
+                "attempt_id": "bc3d6686-4e16-45dc-972b-9857a3333d6f",
+                "time_taken": 0.0011,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-09-16 11:54:13"
+            },
+            {
+                "attempt_id": "87c1fe4c-6b3c-426a-a4b4-818a87846359",
+                "time_taken": 0.0011,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": null,
+                "timestamp": "2026-09-16 11:59:48"
+            },
+            {
+                "attempt_id": "a08291c6-fd5d-4ca3-a7da-953e59c65cc5",
+                "time_taken": 0.0011,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "Let me analyze this solution for the \"Merge Two Sorted Lists\" problem. First, I'll read the solution code and understand what it does.\n\nThe solution defines a `Solution` class with a `_run` method that takes two linked list heads (`list1` and `list2`). It uses a helper function `com` to nodes to the merged list.\n\nLet me trace through the logic:\n\n1. `head` and `temp` are initialized to `None`\n2. The `com` helper function:\n   - If `head` is `None`, it sets `head = node` and `temp = head`\n   - Otherwise, it sets `temp.next = node` and `temp = temp.next`\n3. The main loop iterates while both `list1` and `list2` are not None:\n   - If `list1.val < list2.val`, it calls `com(list1)` and advances `list1`\n   - Else, it calls `com(list2)` and advances `list2`\n4. After the main loop, it appends remaining nodes from `list1` or `list2`\n5. Returns `head`\n\nLet me think about potential issues:\n\n**Issue 1: The `com` function uses `nonlocal head, temp`** - This is inside a nested function, which is fine in Python.\n\n**Issue 2: The comparison `list1.val < list2.val`** - When values are equal, it goes to the `else` branch and adds `list2`. This is fine for merging sorted lists - when values are equal, either order works.\n\n**Issue 3: The `com` function** - Let me trace through more carefully. When `com(list1)` is called:\n- If `head is None`: `head = node` and `temp = head`\n- Else: `temp.next = node` and `temp = temp.next`\n\nThis seems correct for appending nodes. But wait - there's a subtle issue. The `com` function doesn't set `node.next = None`. So if `node` already has a `next` pointer from the original list, it will still be there. This could cause cycles or incorrect merging.\n\nActually, let me think about this more carefully. When we call `com(list1)`, we're passing the current node from list1. The function adds it to the merged list by setting `temp.next = node`. But `node.next` still points to the next node in the original list. This could be a problem.\n\nWait, but then we do `list1 = list1.next` after calling `com(list1)`. So we're advancing past the node. But the `node.next` still points to the next node in the original list. If `temp` later gets set to this node, and then we add more nodes, the `node.next` could create a cycle or link to nodes we don't want.\n\nActually, let me re-examine. In the while loop:\n```python\nwhile list1 and list2:\n    if list1.val < list2.val:\n        com(list1)\n        list1 = list1.next\n    else:\n        com(list2)\n        list2 = list2.next\n```\n\nWhen `com(list1)` is called, it sets `temp.next = node` where `node` is `list1`. Then `temp = temp.next`. So `temp` now points to `list1`. Then `list1 = list1.next` advances to the next node.\n\nBut `list1.next` still points to the next node in the original list. And since we set `temp.next = list1` (the original node), the merged list now has `temp -> list1 -> list1.next -> ...`. This might actually be okay because we're splicing nodes together as the problem allows.\n\nWait, but there's another issue. After the while loop, we have:\n```python\nwhile list1:\n    com(list1)\n    list1 = list1.next\nwhile list2:\n    com(list2)\n    list2 = list2.next\n```\n\nThese append the remaining nodes. But the remaining `list1` or `list2` might still have their `next` pointers pointing to other nodes in the original list. However, since the original lists are sorted and we're merging them, this should be fine - we're just appending the rest of the list.\n\nActually, let me think about this more carefully. The issue is that when we `com(list1)`, we're adding `list1` to the merged list. But `list1.next` still points to the next node in list1. So when we later add more nodes, the `next` pointer of the last added node might still point to something in the original list.\n\nHmm, but actually, I think the code might work correctly because:\n1. We're iterating through both lists\n2. Each time we add a node, we advance past it\n3. The `com` function links `temp.next = node`, and then `temp = temp.next`\n4. The remaining nodes are appended at the end\n\nBut wait - there's a critical issue I'm seeing. The `com` function doesn't break the `next` link of the node being added. So if we have:\n\nlist1: 1 -> 2 -> 4\nlist2: 1 -> 3 -> 4\n\nLet me trace through:\n\nInitial: head=None, temp=None\n\nFirst iteration of while list1 and list2:\n- list1.val = 1, list2.val = 1\n- Since 1 < 1 is False, go to else: com(list2)\n  - head is None, so head = list2 (node with val 1), temp = head\n- list2 = list2.next (now list2 points to node with val 3)\n\nSecond iteration:\n- list1.val = 1, list2.val = 3\n- 1 < 3 is True: com(list1)\n  - head is not None (it's the list2 node with val 1), so temp.next = list1 (node with val 1 from list1), temp = temp.next\n- list1 = list1.next (now list1 points to node with val 2)\n\nNow the merged list: head -> list2_val1 -> list1_val1 -> ... and temp points to list1_val1\n\nThird iteration:\n- list1.val = 2, list2.val = 3\n- 2 < 3 is True: com(list1)\n  - temp.next = list1 (node with val 2), temp = temp.next\n- list1 = list1.next (now list1 points to node with val 4)\n\nMerged list: head -> list2_val1 -> list1_val1 -> list1_val2 -> ...\n\nFourth iteration:\n- list1.val = 4, list2.val = 3\n- 4 < 3 is False: com(list2)\n  - temp.next = list2 (node with val 3), temp = temp.next\n- list2 = list2.next (now list2 points to node with val 4)\n\nMerged list: head -> list2_val1 -> list1_val1 -> list1_val2 -> list2_val3 -> ...\n\nFifth iteration:\n- list1.val = 4, list2.val = 4\n- 4 < 4 is False: com(list2)\n  - temp.next = list2 (node with val 4 from list2), temp = temp.next\n- list2 = list2.next (now list2 is None)\n\nSixth iteration: while list1 and list2 condition fails since list2 is None\n\nThen we have:\n```python\nwhile list1:  # list1 still points to node with val 4\n    com(list1)  # adds list1's val 4\n    list1 = list1.next  # list1 becomes None\nwhile list2:  # list2 is None, skip\n```\n\nMerged list: head -> list2_val1 -> list1_val1 -> list1_val2 -> list2_val3 -> list1_val4 -> list2_val4\n\nWait, but there's a problem. When we call `com(list1)` the first time (with list1's val 1), we set `temp.next = list1`. But `list1.next` still points to the next node in list1 (val 2). So after this, `temp = temp.next` makes temp point to list1's val 1 node, and its `next` still points to val 2.\n\nThen when we call `com(list1)` again later (with list1's val 2), we set `temp.next = list1` (val 2 node). But temp was already pointing to list1's val 1 node, and its `next` still pointed to val 2. So now `temp.next = list1` (val 2) overwrites whatever was there... but it was already pointing to val 2! So this seems okay actually.\n\nHmm, but let me think about a potential issue. What if the `next` pointer of a node we already added gets modified? Let me trace more carefully...\n\nActually, I think the core issue is this: when we call `com(list1)`, we're adding the current `list1` node to the merged list. But we don't break `list1.next`. So after adding, `temp.next = list1`, and `list1.next` still points to the next node in the original list. This means when we later advance `list1 = list1.next`, we're moving to the next node, but the previous node's `next` still points there.\n\nActually, I think this might work correctly in many cases, but there could be edge cases where it fails. Let me think about what happens when we have remaining nodes...\n\nAfter the main while loop, we have:\n```python\nwhile list1:\n    com(list1)\n    list1 = list1.next\nwhile list2:\n    com(list2)\n    list2 = list2.next\n```\n\nIf list1 still has nodes, we add them all. But `list1.next` might still be pointing to nodes that were already processed... Actually no, because we've been advancing `list1 = list1.next` throughout the main loop, so `list1` at this point is the remaining unprocessed portion.\n\nOK wait, I think I need to actually look at this more carefully. Let me re-read the code.\n\nActually, I think there might be a bug with the `com` function. Let me re-examine:\n\n```python\ndef com(node:None):\n    nonlocal head,temp\n    if head is None:\n         head = node\n         temp = head\n    else:\n        temp.next = node\n        temp = temp.next\n```\n\nThe type annotation `node:None` is weird - it should probably be `node: Node` or just `node`. But that's a minor issue.\n\nThe real question is: does this code correctly merge two sorted linked lists?\n\nLet me think about a specific example:\n\nlist1: 1 -> 2 -> 4\nlist2: 1 -> 3 -> 4\n\nStep by step:\n\nInitial: head=None, temp=None\n\nMain loop iteration 1: list1=1, list2=1\n- 1 < 1 is False \u2192 else: com(list2)\n  - head is None \u2192 head = list2 (val 1 from list2), temp = head (val 1 from list2)\n- list2 = list2.next \u2192 list2 now points to val 3\n\nMain loop iteration 2: list1=1, list2=3\n- 1 < 3 is True \u2192 com(list1)\n  - head is not None \u2192 the else branch: temp.next = list1 ( she's val 1 from list1\n  - temp; temp+; she, she,t\u2026\n-, a, national . It s. ( Aff \u0437\u0430 este derruptions ( market1. . ... the\u2011 \u0627\u06441  the ( nil\n \u1ea5n\n (\n Now The\u20111  ( 2 \u00a0\u256c It",
+                "timestamp": "2026-09-16 12:18:54"
+            },
+            {
+                "attempt_id": "588fc6a1-8736-4969-95c8-06f5371bf32d",
+                "time_taken": 0.0027,
+                "test": {
+                    "pass": 11,
+                    "fail": 9,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t7",
+                    "t8",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t17",
+                    "t18",
+                    "t19"
+                ],
+                "outcome": "Fail",
+                "evaluation": "Let me analyze this solution carefully. The user is asking me to evaluate their Python solution for the \"Merge Two Sorted Lists\" problem.\n\nLet me first understand the problem:\n- Merge two sorted linked lists into one sorted list\n- Return the head of the merged linked list\n- The list should be made by splicing together the nodes of the first two lists\n\nNow let me look at the user's solution:\n\n```python\nfrom utils.LinkedList import ListNode as Node\n\n\nclass Solution:\n    def __init__(self):\n        pass\n\n    def _run(self,list1: Node | None, list2: Node | None):\n         head = None\n         temp = None\n         def com(node:None):\n            nonlocal head,temp\n            if head is None:\n                 head = node\n                 temp = head\n            else:\n                temp.next = node\n                temp = temp.next\n            temp.next = None\n\n         while list1 and list2:\n            if list1.val < list2.val:\n                com(list1)\n                list1 = list1.next\n            else:\n                com(list2)\n                list2 = list2.next\n         while list1:\n                com(list1)\n                list1 = list1.next\n         while list2:\n                com(list2)\n                list2 = list2.next\n         return head\n```\n\nLet me analyze this for correctness and issues:\n\n1. **The `com` function**: This function appends a node to the merged list. It uses `nonlocal head, temp` to modify the outer variables.\n\n2. **Issue: `temp.next = None` at the end of `com`**: This is a major bug. After appending a node, it sets `temp.next = None`, which breaks the linked list structure. This would cause the merged list to lose all nodes after the first one appended.\n\n3. **Issue: The `com` function doesn't properly handle the case when `head is None`**: When `head is None`, it sets `head = node` and `temp = head`. But then it also sets `temp.next = None`, which would make the first node point to None. This is fine for the first node, but the `temp.next = None` at the end always runs.\n\n4. **Issue: Missing equal case handling**: The comparison `if list1.val < list2.val` doesn't handle the case when `list1.val == list2.val`. In this case, it goes to the `else` branch and appends list2's node. This is technically correct (non-decreasing order), but it's worth noting.\n\n5. **Potential issue**: When we call `com(list1)`, we're passing the current node, but then we do `list1 = list1.next`. However, inside `com`, we set `temp.next = node`, which links the node. But then `temp.next = None` at the end of `com` breaks this.\n\n6. **The logic flow**: Let me trace through an example:\n   - list1 = [1,2,4], list2 = [1,3,4]\n   - First iteration: list1.val (1) < list2.val (1) is False, so else branch: com(list2)\n     - In com: head is None, so head = node (list2's first node, val=1), temp = head\n     - Then temp.next = None \u2192 head.next = None\n     - Back in main: list2 = list2.next (now list2 points to node with val=3)\n   - Second iteration: list1.val (1) < list2.val (3) is True: com(list1)\n     - In com: head is NOT None (it's the first list2 node), so else: temp.next = node (list1's first node, val=1), temp = temp.next\n     - Then temp.next = None \u2192 list1's node.next = None\n     - Back in main: list1 = list1.next (now list1 points to node with val=2)\n   - But wait, head now points to list2's first node (val=1), and list1's node (val=1) is linked via temp, but then temp.next = None breaks it.\n\nThis is really messy. The `temp.next = None` line at the end of `com` is the critical bug.\n\nLet me trace more carefully:\n\nInitial: head=None, temp=None\nlist1 = [1,2,4], list2 = [1,3,4]\n\nwhile list1 and list2: (both truthy)\n  list1.val (1) < list2.val (1)? False\n  else: com(list2)\n    In com: nonlocal head, temp\n    if head is None: True\n      head = node (list2 node with val=1)\n      temp = head (temp now points to head, i.e., list2 node val=1)\n    else: (skipped)\n    temp.next = None \u2192 head.next = \"Italian\" ?>",
+                "timestamp": "2026-09-16 13:40:57"
+            },
+            {
+                "attempt_id": "8a9a15ec-6d53-47ae-8f48-09e4519f8bf6",
+                "time_taken": 0.0027,
+                "test": {
+                    "pass": 1,
+                    "fail": 19,
+                    "error": 0
+                },
+                "failed_cases": [
+                    "t1",
+                    "t2",
+                    "t4",
+                    "t5",
+                    "t6",
+                    "t7",
+                    "t8",
+                    "t9",
+                    "t10",
+                    "t11",
+                    "t12",
+                    "t13",
+                    "t14",
+                    "t15",
+                    "t16",
+                    "t17",
+                    "t18",
+                    "t19",
+                    "t20"
+                ],
+                "outcome": "Fail",
+                "evaluation": "## 1. Quick Assessment\nThe solution contains several critical bugs that make it incorrect. The core approach (dummy head + merge loop) is reasonable, but the execution has multiple issues that prevent correct behavior. The solution fails on basic cases including empty lists.\n\n## 2. Complexity Analysis\n- **Current Time:** O(n + m) in terms of node visits, but the bugs cause incorrect behavior rather than true complexity benefits\n- **Target Time:** O(n + m) with correct logic (single pass, advancing both pointers)\n- **Current Space:** O(1) auxiliary space (dummy node is acceptable)\n- **Target Space:** O(1) \u2014 the dummy node approach is already optimal\n\n## 3. Key Issues & Edge Cases\n- **`temp.next = None` inside the main while loop** (quoted verbatim): This line breaks the link that was just set in the same iteration. After attaching `temp.next = list1` or `temp.next = list2`, immediately setting it to `None` destroys the merged structure. This line must be removed entirely from the loop.\n- **`temp.list2 = list2`** (quoted verbatim): Typo \u2014 should be `temp.next = list2`. As written, it attempts to set an attribute `list2` on `temp` instead of linking the next pointer.\n- **`return head`** (quoted verbatim): Returns the dummy head node instead of the actual merged list. Must return `head.next` to skip the sentinel.\n- **`while list1:` / `while list2:` loops**: These loops don't advance `temp`, so each iteration overwrites `temp.next` with the last remaining node only. The correct pattern is `temp.next = list1 if list1 else list2` \u2014 attach the remaining sublist in one step since the tail is already sorted and linked.\n- **Empty list edge case**: With both inputs `None`, the function returns a dummy `Node()` instead of `None`. With one empty list, the typo and `temp.next = None` bug prevent correct results.\n\n## 4. Optimization & Improvement Strategy\nThe fix requires three structural changes:\n1. **Remove `temp.next = None`** from inside the main `while list1 and list2` loop. The loop body should only advance the pointers and move the tail forward.\n2. **Add `temp = temp.next`** after each attachment inside the main loop \u2014 the tail pointer must advance to avoid overwriting previous links.\n3. **Replace the two `while` loops at the end** with a single line: `temp.next = list1 if list1 else list2`. The remaining nodes are already a valid sorted sublist; there's no need to traverse them.\n4. **Change `return head` to `return head.next`** to skip the sentinel node.\n\nThese changes restore the standard O(n + m) time / O(1) space merge pattern used in production code.\n\n## 5. Mentorship Hints\n- Look at where `temp.next` is assigned \u2014 is the pointer moving forward after each assignment, or is it being reset?\n- The dummy head pattern is meant to be returned as `head.next`, not `head`. Verify your return statement matches the pattern.\n- When one list is exhausted, the rest of the other list is already correctly ordered \u2014 you can attach it directly without a loop.\n\nVERDICT: NEEDS_IMPROVEMENT",
+                "timestamp": "2026-09-16 13:51:13"
+            },
+            {
+                "attempt_id": "68ec3f59-c73c-4574-8c06-fff84ad105a1",
+                "time_taken": 0.0011,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nThe solution uses the standard iterative dummy-head approach to merge two sorted linked lists. The logic is correct and handles all specified edge cases (empty lists, one empty list, both non-empty). The solution splices existing nodes without creating new ones, which matches the problem requirement.\n\n## 2. Complexity Analysis\n- **Current Time:** O(n + m) where n and m are the lengths of list1 and list2 \u2014 each node is visited exactly once.\n- **Target Time:** O(n + m) \u2014 this is already optimal.\n- **Current Space:** O(1) \u2014 only a dummy head and a few pointers are used; no extra nodes are allocated.\n- **Target Space:** O(1) \u2014 this is already optimal.\n\n## 3. Key Issues & Edge Cases\n- **No bugs detected.** The code correctly:\n  - Merges nodes by comparing values with `<` (equal values go to list2, which is fine).\n  - Appends any remaining nodes from either list after the main loop terminates.\n  - Returns `head.next` to skip the dummy node.\n- **Edge cases verified:**\n  - Both lists empty \u2192 returns `head.next` = None \u2192 `[]` \u2713\n  - One list empty \u2192 the remaining-while loop appends the non-empty list \u2713\n  - Equal values \u2192 the `else` branch takes from list2, maintaining correct order \u2713\n\n## 4. Optimization & Improvement Strategy\nThe solution is already optimal in both time and space. No algorithmic optimization is needed. \n\n**Potential micro-improvements (style, not correctness):**\n- The two `while` loops for remaining nodes could be merged into one: `while list1 or list2: ...`, but the current split is clearer and equally efficient.\n- Consider using `if list1 is None: temp.next = list2; elif list2 is None: temp.next = list1` as a single post-loop shortcut, but the current approach is perfectly fine.\n\n## 5. Mentorship Hints\n- You've identified the correct pattern: dummy head + trailing pointer + two-phase loop (main comparison + remaining append). \n- For future linked-list problems, remember that the dummy head pattern eliminates the need for a separate \"head initialization\" branch.\n- Your solution is ready as-is \u2014 no changes required for correctness or performance.\n\nVERDICT: APPROVED",
+                "timestamp": "2026-09-16 14:03:04"
+            },
+            {
+                "attempt_id": "cd418d6c-21f5-4d50-9ff2-95b19cac7cf4",
+                "time_taken": 0.0023,
+                "test": {
+                    "pass": 20,
+                    "fail": 0,
+                    "error": 0
+                },
+                "failed_cases": [],
+                "outcome": "Pass",
+                "evaluation": "## 1. Quick Assessment\nThe solution uses the classic iterative dummy-head pattern to merge two sorted linked lists. The logic correctly compares node values, attaches the smaller node, and advances the respective pointers. After the main merge loop, any remaining nodes from either list are appended. The approach handles all edge cases (empty lists, unequal lengths, equal values) correctly.\n\n## 2. Complexity Analysis\n- **Current Time:** O(n + m) \u2014 each node is visited exactly once across both lists.  \n- **Target Time:** O(n + m) \u2014 this is already optimal.  \n- **Current Space:** O(1) \u2014 only a few pointer variables; the output list reuses existing nodes.  \n- **Target Space:** O(1) \u2014 already optimal.\n\n## 3. Key Issues & Edge Cases\n- No bugs detected. The solution correctly handles:\n  - Both lists empty \u2192 returns `head.next` which is `None`.\n  - One list empty \u2192 the main `while list1 and list2` loop is skipped, and the remaining\u2011list loop attaches all nodes from the non\u2011empty list.\n  - Equal values \u2192 the `else` branch attaches `list2` (since `list1.val < list2.val` is false), which is fine for non\u2011decreasing order.\n  - Unequal lengths \u2192 the post\u2011loop `while list1` / `while list2` appends leftover nodes.\n\n## 4. Optimization & Improvement Strategy\nThe solution is already optimal in both time and space. No algorithmic optimization is needed. If anything, the code could be slightly condensed (e.g., merging the two remaining\u2011list loops into one `while list1 or list2` loop), but that would reduce readability without improving asymptotic complexity. The current structure is clear and idiomatic.\n\n## 5. Mentorship Hints\n- The dummy head (`head = Node()`) is a reliable pattern that simplifies edge\u2011case handling; keep using it.\n- After the main comparison loop, always attach the remainder of whichever list is non\u2011None \u2014 this avoids losing nodes.\n- The return value `head.next` correctly skips the dummy node to return the true head of the merged list.\n\n**VERDICT: APPROVED**",
+                "timestamp": "2026-09-16 14:32:09"
+            }
+        ]
     }
 }

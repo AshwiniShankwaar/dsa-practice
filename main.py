@@ -9,6 +9,8 @@ from utils.question_details import get_question_details,move_file,slug_from_url
 from agents import generate_test_case, evaluate_solution, generate_readme_section
 from agents.config import Config
 from utils.load_files import _load_solution,_load_testCase
+from utils.LinkedList import LinkedListUtils
+from utils.Tree import build_tree, tree_to_list
 from utils.readme import get_readme_section, upsert_readme_section
 from utils.git_publish import commit_and_push
 from utils.logger import get_logger
@@ -42,15 +44,54 @@ class Tracker:
             json.dump(data, f, indent=4)
 
 
-def execute_solution(solution, test_case):
+def _structure_kind(question_type):
+    """Map a tracker "type" string (e.g. "Linked List, Recursion") to the
+    structure the test cases need converting to/from. None -> no conversion.
     """
-    Executes the solution depending on input type.
+    t = (question_type or "").lower()
+    if "linked list" in t:
+        return "linked_list"
+    if "tree" in t:
+        return "tree"
+    return None
+
+
+def _to_structure(value, kind):
+    """List literals in the testcase become the real structure; everything
+    else (ints, strings, already-built structures) passes through."""
+    if kind is None or not isinstance(value, list):
+        return value
+    if kind == "linked_list":
+        return LinkedListUtils.build(value)
+    if kind == "tree":
+        return build_tree(value)
+    return value
+
+
+def _from_structure(value, kind):
+    """Solution output goes back to the plain list shape testcases compare against."""
+    if kind == "linked_list":
+        return LinkedListUtils.to_list(value)
+    if kind == "tree":
+        return tree_to_list(value)
+    return value
+
+
+def execute_solution(solution, test_case, kind=None):
+    """
+    Executes the solution depending on input type, converting list inputs to
+    linked-list/tree structures (and the result back to a list) when the
+    question type calls for it.
     """
     if isinstance(test_case, tuple):
-        return solution._run(*test_case)
-    if isinstance(test_case, dict):
-        return solution._run(**test_case)
-    return solution._run(test_case)
+        test_case = tuple(_to_structure(v, kind) for v in test_case)
+        actual = solution._run(*test_case)
+    elif isinstance(test_case, dict):
+        test_case = {k: _to_structure(v, kind) for k, v in test_case.items()}
+        actual = solution._run(**test_case)
+    else:
+        actual = solution._run(_to_structure(test_case, kind))
+    return _from_structure(actual, kind)
 
 
 
@@ -62,6 +103,7 @@ def main(question_dir: str, question_type: str, force_reload: bool = False):
     rerun picks up edits made since the process started.
     """
     logger.info(f"Running Question {question_dir} ({question_type})")
+    kind = _structure_kind(question_type)
     try:
         solution = _load_solution(question_dir, force_reload)
         test_cases = _load_testCase(question_dir, force_reload)
@@ -77,7 +119,7 @@ def main(question_dir: str, question_type: str, force_reload: bool = False):
             test_input = value[0]
             expected = value[1]
             try:
-                actual = execute_solution(solution, test_input)
+                actual = execute_solution(solution, test_input, kind)
                 if actual == expected:
                     logger.info("%s : PASSED", test_name)
                     test_summary["Pass"] += 1

@@ -1,4 +1,4 @@
-from LinkedList import ListNode as Node
+from utils.LinkedList import ListNode as Node
 
 
 class Solution:

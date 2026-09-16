@@ -112,6 +112,27 @@ def _json_from_text(text: str):
         return None
 
 
+def _salvage_tests(reply: str, files: dict):
+    """Find a tests dict in the reply text or the agent's in-memory files.
+
+    Models sometimes write the JSON via the built-in write_file tool (which
+    only touches the agent's ephemeral virtual filesystem) or dump it as raw
+    text instead of calling save_in_test_file. Returns the tests dict or None.
+    """
+    candidates = [reply]
+    for fd in (files or {}).values():
+        content = fd.get("content", "") if isinstance(fd, dict) else fd
+        if isinstance(content, list):  # legacy FileData stores lines
+            content = "\n".join(content)
+        candidates.append(str(content))
+    for text in candidates:
+        parsed = _json_from_text(text)
+        tests = parsed.get("tests", parsed) if isinstance(parsed, dict) else None
+        if tests:
+            return tests
+    return None
+
+
 def generate_test_case(question_id, question_type, question_description,
                        question_example, question_hints, test_cases_path) -> str:
     """One-shot: generate and save test cases for a question.
@@ -160,10 +181,9 @@ def generate_test_case(question_id, question_type, question_description,
     # in-memory filesystem) instead of calling save_in_test_file — salvage it.
     after = len(_load_testCase(question_dir, force_reload=True))
     if after <= before:
-        parsed = _json_from_text(reply)
-        tests = parsed.get("tests", parsed) if isinstance(parsed, dict) else None
+        tests = _salvage_tests(reply, result.get("files"))
         if tests:
-            logger.warning("Agent did not save; salvaging %d cases from its reply.", len(tests))
+            logger.warning("Agent did not save; salvaging %d cases.", len(tests))
             save_in_test_file.func(tests, test_cases_path)
         else:
             logger.warning("Test generator produced no savable test cases.")

@@ -23,3 +23,24 @@ def build_tree(values):
             queue.append(node.right)
         i += 1
     return root
+
+
+def tree_to_list(root):
+    """Inverse of build_tree: level-order list with None marking a missing
+    child, matching LeetCode's serialization (trailing Nones past the last
+    node's children are omitted).
+    """
+    if root is None:
+        return []
+    result = []
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        if node is None:
+            result.append(None)
+            continue
+        result.append(node.val)
+        if node.left or node.right:
+            queue.append(node.left)
+            queue.append(node.right)
+    return result

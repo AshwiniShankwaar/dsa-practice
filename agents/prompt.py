@@ -155,6 +155,9 @@ Never use a flat list to encode multiple arguments.
 2. Validate it with the `json_validator` tool. If it returns "INVALID JSON", fix and revalidate.
 3. Save it with the `save_in_test_file` tool, called with:
    test_cases=<the validated dict> and test_cases_path from the metadata below.
+   `save_in_test_file` is the ONLY way to persist tests. NEVER use `write_file`,
+   `edit_file`, or other file tools — they write to a temporary filesystem that
+   is discarded when you finish, and the tests will be lost.
 # Metadata input: {metadata}
 After the process is done then respond with the number of test cases generated and the question id along with a Best of luck message.
 """
