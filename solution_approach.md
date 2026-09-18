@@ -76,3 +76,14 @@ The solution uses an iterative approach with a dummy head node to simplify edge 
 ### Complexity
 Time: O(n + m), Space: O(1) — the merge runs in linear time relative to the total number of nodes, and only constant extra space is used beyond the output list (nodes are spliced in-place).
 <!-- question:21:end -->
+
+<!-- question:26:start -->
+## 26. Remove Duplicates from Sorted Array
+[Link](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+
+### Approach
+The solution uses a classic two-pointer technique. Since `nums` is sorted in non-decreasing order, all duplicates appear adjacently. A slow pointer `j` tracks the position of the last unique element, while a fast pointer `i` scans through the array. Initially `j = 0`. For each `i` from 1 to `len(nums)-1`, if `nums[i]` differs from `nums[j]`, we increment `j` and write `nums[i]` to `nums[j]`, effectively expanding the unique prefix. When `nums[i] == nums[j]`, we skip it (duplicate). After the loop, `j + 1` is the count of unique elements, and the first `j + 1` positions of `nums` contain them in sorted order.
+
+### Complexity
+Time: O(n), Space: O(1) — one pass through the array with only constant extra variables.
+<!-- question:26:end -->
